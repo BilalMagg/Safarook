@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 35 33% 95%;
+    --foreground: 207 55% 15%;
+
+    --card: 35 33% 97%;
+    --card-foreground: 207 55% 15%;
+
+    --popover: 35 33% 97%;
+    --popover-foreground: 207 55% 15%;
+
+    --primary: 14 55% 51%;
+    --primary-foreground: 35 33% 97%;
+
+    --secondary: 35 45% 85%;
+    --secondary-foreground: 207 55% 15%;
+
+    --muted: 35 25% 90%;
+    --muted-foreground: 207 20% 46%;
+
+    --accent: 153 45% 30%;
+    --accent-foreground: 35 33% 97%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 25% 82%;
+    --input: 35 25% 82%;
+    --ring: 14 55% 51%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 35 33% 95%;
+    --sidebar-foreground: 207 55% 15%;
+    --sidebar-primary: 14 55% 51%;
+    --sidebar-primary-foreground: 35 33% 97%;
+    --sidebar-accent: 35 25% 90%;
+    --sidebar-accent-foreground: 207 55% 15%;
+    --sidebar-border: 35 25% 82%;
+    --sidebar-ring: 14 55% 51%;
+
+    /* Custom Moroccan tokens */
+    --terracotta: 14 55% 51%;
+    --sand: 35 45% 85%;
+    --deep-blue: 207 55% 25%;
+    --emerald: 153 45% 30%;
+    --gold: 40 80% 55%;
+    --warm-white: 35 33% 97%;
+  }
+
+  .dark {
+    --background: 207 55% 8%;
+    --foreground: 35 33% 95%;
+
+    --card: 207 55% 11%;
+    --card-foreground: 35 33% 95%;
+
+    --popover: 207 55% 11%;
+    --popover-foreground: 35 33% 95%;
+
+    --primary: 14 55% 55%;
+    --primary-foreground: 35 33% 97%;
+
+    --secondary: 207 30% 18%;
+    --secondary-foreground: 35 33% 95%;
+
+    --muted: 207 30% 18%;
+    --muted-foreground: 35 20% 65%;
+
+    --accent: 153 45% 35%;
+    --accent-foreground: 35 33% 97%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 207 30% 20%;
+    --input: 207 30% 20%;
+    --ring: 14 55% 55%;
+
+    --sidebar-background: 207 55% 8%;
+    --sidebar-foreground: 35 33% 95%;
+    --sidebar-primary: 14 55% 55%;
+    --sidebar-primary-foreground: 35 33% 97%;
+    --sidebar-accent: 207 30% 18%;
+    --sidebar-accent-foreground: 35 33% 95%;
+    --sidebar-border: 207 30% 20%;
+    --sidebar-ring: 14 55% 55%;
+
+    --terracotta: 14 55% 55%;
+    --sand: 35 30% 25%;
+    --deep-blue: 207 55% 40%;
+    --emerald: 153 45% 40%;
+    --gold: 40 80% 60%;
+    --warm-white: 207 55% 11%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .moroccan-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C65D3E' fill-opacity='0.05'%3E%3Cpath d='M30 0L60 30L30 60L0 30z M30 10L50 30L30 50L10 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .glass-card {
+    @apply bg-card/70 backdrop-blur-xl border border-border/50 shadow-lg;
+  }
+  .gradient-sunset {
+    background: linear-gradient(135deg, hsl(var(--terracotta)), hsl(var(--gold)), hsl(var(--terracotta) / 0.8));
+  }
+  .gradient-hero {
+    background: linear-gradient(180deg, hsl(var(--deep-blue)) 0%, hsl(var(--terracotta) / 0.6) 60%, hsl(var(--gold) / 0.3) 100%);
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--terracotta)), hsl(var(--gold)));
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
